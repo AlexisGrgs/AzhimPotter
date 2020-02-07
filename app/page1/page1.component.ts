@@ -14,6 +14,7 @@ export class Page1Component implements OnInit {
   isImportant=true;
   totalPoint = 10;
   counter = 0;
+  competences = [0,0,0,0,0,0,0,0,0];
 
   big()
   {
@@ -31,14 +32,21 @@ export class Page1Component implements OnInit {
     console.log("salut");
   }
 
-  onIncrement()
+  onIncrement(n)
   {
-    this.counter++;
+     if(this.totalPoint>0){
+      this.competences[n]++;
+      this.totalPoint--;
+    }
   }
 
-  onDecrement()
+  onDecrement(n)
   {
-    this.counter--;
+    if(this.competences[n]>0)
+    {
+      this.competences[n]--;
+      this.totalPoint++;
+    }
   }
   constructor() {
     

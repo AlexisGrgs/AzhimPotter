@@ -1,33 +1,37 @@
-<!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <div class="container">
 <h1>Tu es un sorcier {{sorcier}}</h1>
-<h2> Tu as {{counter}} point de compétence(s) à répartir !</h2>
+<h2> Tu as {{totalPoint}} point de compétence(s) à répartir !</h2>
 
 
-<div class="container">
+<div class="qty mt-5">
   <h2> Intelligence </h2>
-	<div class="row">
-    
-    <div class="col-lg-2">
-      
-      <div class="input-group">
-        <span class="input-group-btn">
-          <button type="button" class="btn btn-primary btn-lg"  (click)="onDecrement()" data-field="">
-            <span class="glyphicon glyphicon-minus"></span>
-          </button>
-        </span>
-        <input type="text" id="quantity" name="quantity" class="form-control input-number" value={{counter}}>
-        <span class="input-group-btn">
-          <button type="button" class="btn btn-primary" (click)="onIncrement()" data-field="">
-            <span class="glyphicon glyphicon-plus"></span>
-          </button>
-        </span>
-      </div>
-    </div>
-	</div>
-  
+  <span class="minus bg-dark" (click)="onDecrement(0)">-</span>
+  <input type="number" class="count" name="qty" value={{competences[0]}}>
+  <span class="plus bg-dark" (click)="onIncrement(0)">+</span>
 </div>
+
+<div class="qty mt-5">
+  <h2> Force </h2>
+  <span class="minus bg-dark" (click)="onDecrement(1)">-</span>
+  <input type="number" class="count" name="qty" value={{competences[1]}}>
+  <span class="plus bg-dark" (click)="onIncrement(1)">+</span>
+</div>
+
+<div class="qty mt-5">
+  <h2> Savoir </h2>
+  <span class="minus bg-dark" (click)="onDecrement(2)">-</span>
+  <input type="number" class="count" name="qty" value={{competences[2]}}>
+  <span class="plus bg-dark" (click)="onIncrement(2)">+</span>
+</div>
+
+<div class="qty mt-5">
+  <h2> Vitesse </h2>
+  <span class="minus bg-dark" (click)="onDecrement(3)">-</span>
+  <input type="number" class="count" name="qty" value={{competences[3]}}>
+  <span class="plus bg-dark" (click)="onIncrement(3)">+</span>
+</div>
+
 
 <br>
 <div align='center'>
@@ -41,6 +45,9 @@
 <button type="button" 
 (click)="buy()">BUY</button>
 <div (drop)="onDrop($event)">BUY</div>
+
+
+
 </div>
 
 
