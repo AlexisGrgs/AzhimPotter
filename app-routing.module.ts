@@ -9,7 +9,7 @@ import { ContentsComponent} from './app/contents/contents.component'
 import { PageWithCardsComponent } from './app/page-with-cards/page-with-cards.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/page1', pathMatch: 'full' },
+  { path: '', redirectTo: '/introduction', pathMatch: 'full' },
   { path: 'introduction', component: Page1Component, data: { title: 'Introduction' } },
   { path: 'page2', component: Page2Component, data: { title: 'Lorem Ipsum Short (2)' } },
   { path: 'page3', component: Page3Component, data: { title: 'Lorem Ipsum Medium (3)' } },
