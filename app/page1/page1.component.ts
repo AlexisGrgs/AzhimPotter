@@ -12,6 +12,9 @@ export class Page1Component implements OnInit {
   isAvailable = false;
   isValid = true;
   isImportant=true;
+  totalPoint = 10;
+  counter = 0;
+
   big()
   {
     if(this.isImportant){
@@ -27,9 +30,20 @@ export class Page1Component implements OnInit {
   buy(){
     console.log("salut");
   }
+
+  onIncrement()
+  {
+    this.counter++;
+  }
+
+  onDecrement()
+  {
+    this.counter--;
+  }
   constructor() {
     
    }
+
 
   ngOnInit() {
   }
