@@ -1,0 +1,26 @@
+.bounds {    
+  min-width: 300px;  
+}
+
+.main-mat-toolbar {  
+  z-index: 10;
+}
+
+.slide-in-drawer {
+  min-width: 240px;
+}
+
+// // no padding left when small?
+// .no-padding-left {
+//   padding-left: 0px;
+// }
+
+// .title-with-padding-left {
+//   padding-left: 16px;
+// }
+
+.mat-toolbar.mat-primary {
+  background: #007bff;
+  color: #fff;
+}
+

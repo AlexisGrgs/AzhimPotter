@@ -1,0 +1,32 @@
+<div class="bounds" 
+  fxLayout="column" 
+  fxFlexFill="min-height">
+
+  <mat-toolbar fxFlex="initial" color="primary" 
+    class="main-mat-toolbar mat-elevation-z8 no-padding-left" 
+    fxLayout="row"
+    fxLayoutAlign="start stretch">
+    
+    <button mat-button
+      fxFlex="initial" 
+      fxHide fxShow.lt-sm      
+      (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>    
+
+    <div fxFlex fxLayout="row" fxLayoutAlign="start center" class="title-with-padding-left">
+      <span>Azhim Potter</span>
+    </div>
+
+  </mat-toolbar>
+
+  <mat-drawer-container fxFlex autosize>
+    <mat-drawer #drawer class="slide-in-drawer">
+      <app-navbar-contents></app-navbar-contents>
+    </mat-drawer>      
+    
+    <app-sub-content></app-sub-content>
+    
+  </mat-drawer-container>           
+    
+</div>

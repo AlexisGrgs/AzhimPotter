@@ -1,0 +1,40 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+@import 'variables';
+
+// Imports functions, variables, and mixins that are needed by other Bootstrap files
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+// Import Reboot
+@import '~bootstrap/scss/reboot';
+@import '~bootstrap/scss/grid'; // add the grid
+@import '~bootstrap/scss/utilities'; // add css utilities
+
+@import 'reset';
+
+// SCSS variable definition:
+// $my-primary-color: yellow;
+
+:root {
+  //--red: red;
+  // retrieve with var(--red);
+
+  // --nav-list-link-color: rgba(0,0,0,.54);
+  // --nav-list-link-hover-color: #3f51b5;
+
+  // --navbar-background-color: rgba(0, 0, 0, 0.03);
+  // --navbar-scrollbar-thumb-color: rgba(0, 0, 0, .26);
+  // --navbar-scrollbar-background-color: #F5F5F5;
+}
+
+body { 
+  margin: 0;
+}
+
+html, body {
+  box-sizing: border-box;
+  height: 100%;  
+  // padding: 10px;
+  //background-color: $my-primary-color;
+}

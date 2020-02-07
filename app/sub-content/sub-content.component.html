@@ -1,0 +1,53 @@
+<div fxLayout="column" class="component-maximize">  
+    
+    <mat-toolbar fxFlex="nogrow" color="primary" class="page-header">        
+      <div fxLayout="row" fxFlexFill="width">
+        <div fxFlex="initial" fxFlexFill><h1>{{ title }}</h1></div>
+      </div>
+    </mat-toolbar>  
+        
+    <!-- FlexBox -->    
+    <div 
+      fxFlex="auto"       
+      fxLayout="row">
+      <div fxFlex         
+        class="flex-nav-bar nav-bar"
+        fxShow fxHide.lt-sm>
+          <div class="sticky-nav">
+          <div class="nav-items-box scrollbar">            
+            <app-navbar-contents></app-navbar-contents>               
+          </div>                    
+        </div>                
+      </div>
+      <div fxFlex>
+        <!-- <div class="content container"> -->
+        <div class="content">
+          <ng-container *ngTemplateOutlet="template"></ng-container>
+        </div>        
+      </div>
+    </div>
+
+   
+
+    <div fxFlex="nogrow" class="footer-margin">
+      <mat-toolbar color="primary" 
+        class="footer-padding"
+        fxLayout="row"
+        fxLayoutAlign="start center"
+        >
+        <div fxFlex>Footer</div>
+        <div fxFlex class="footer-text">Version</div>
+        <div fxFlex class="footer-text">Copyright Info</div>
+      </mat-toolbar>
+    </div>
+  
+</div>
+
+<!--
+  put router-outlet into ng-template when using inside *ngIf:
+  https://stackoverflow.com/a/51725607/54159 
+-->
+
+<ng-template #template>
+  <router-outlet></router-outlet>
+</ng-template>
