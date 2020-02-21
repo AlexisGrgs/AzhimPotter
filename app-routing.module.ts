@@ -10,7 +10,7 @@ import { PageWithCardsComponent } from './app/page-with-cards/page-with-cards.co
 
 const routes: Routes = [
   { path: '', redirectTo: '/introduction', pathMatch: 'full' },
-  { path: 'introduction', component: Page1Component, data: { title: 'Introduction' } },
+  { path: 'introduction', component: Page1Component, data: { title: 'Tu es un sorcier Azhim' } },
   { path: 'page2', component: Page2Component, data: { title: 'Lorem Ipsum Short (2)' } },
   { path: 'page3', component: Page3Component, data: { title: 'Lorem Ipsum Medium (3)' } },
   { path: 'page-with-cards', component: PageWithCardsComponent, data: { title: 'Page With Cards' } },
