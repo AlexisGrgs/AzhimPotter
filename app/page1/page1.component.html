@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <div class="container">
-<h1>Tu es un sorcier {{sorcier}}</h1>
-<h2> Tu as {{totalPoint}} point de compétence(s) à répartir !</h2>
+<h2> Tu as {{totalPoint}} point{{sornot}} de compétence à répartir !</h2>
 
 
 <div class="qty mt-5">
@@ -40,11 +39,9 @@
 
 <p> Dommage tu es marocain ! </p>
 
-<button (click)="big()" [style.font-size.em]="isImportant?2:1">Big</button>
 
 <button type="button" 
-(click)="buy()">BUY</button>
-<div (drop)="onDrop($event)">BUY</div>
+(click)="getNbPoint()">BUY</button>
 
 
 

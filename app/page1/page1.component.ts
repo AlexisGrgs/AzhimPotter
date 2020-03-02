@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'app-page1',
@@ -9,27 +10,21 @@ export class Page1Component implements OnInit {
 
   sorcier = 'Azhim';
   bookPictureUrl = 'https://pbs.twimg.com/profile_images/791642012936200192/hOA2XMnZ_400x400.jpg';
-  isAvailable = false;
-  isValid = true;
-  isImportant=true;
   totalPoint = 10;
-  counter = 0;
+  sornot=this.totalPoint>1?"s":"";
   competences = [0,0,0,0,0,0,0,0,0];
 
-  big()
-  {
-    if(this.isImportant){
-      var retour = 2;
-    }
-    else
-    {
-      var retour = 1;
-    }
-    this.isImportant=!this.isImportant;
-    return retour;
-  }
-  buy(){
-    console.log("salut");
+ constructor(private http: HttpClient) {}
+
+  getNbPoint() {
+    return this.http.get("https://sports-cars-accountable-civet.cfapps.io/api/cars/search/A7%20SPORTBACK").subscribe(
+      result => {
+        this.totalPoint = parseInt(result[0].id);
+      },
+      error => {
+        console.error(error);
+      }
+    );
   }
 
   onIncrement(n)
@@ -37,6 +32,7 @@ export class Page1Component implements OnInit {
      if(this.totalPoint>0){
       this.competences[n]++;
       this.totalPoint--;
+      this.sornot=this.totalPoint>1?"s":""
     }
   }
 
@@ -46,14 +42,12 @@ export class Page1Component implements OnInit {
     {
       this.competences[n]--;
       this.totalPoint++;
+      this.sornot=this.totalPoint>1?"s":""
     }
   }
-  constructor() {
-    
-   }
-
 
   ngOnInit() {
+    this.getNbPoint();
   }
 
 }
