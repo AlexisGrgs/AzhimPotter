@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Component({
   selector: 'app-page1',
@@ -13,13 +13,17 @@ export class Page1Component implements OnInit {
   totalPoint = 10;
   sornot=this.totalPoint>1?"s":"";
   competences = [0,0,0,0,0,0,0,0,0];
+  api="http://60d04506.ngrok.io/api/baguettes";
+  api2="https://sports-cars-accountable-civet.cfapps.io/api/cars/search/A7%20SPORTBACK"
+  retour=0;
 
  constructor(private http: HttpClient) {}
 
   getNbPoint() {
-    return this.http.get("https://sports-cars-accountable-civet.cfapps.io/api/cars/search/A7%20SPORTBACK").subscribe(
+    return this.http.get(this.api).subscribe(
       result => {
-        this.totalPoint = parseInt(result[0].id);
+        this.totalPoint = parseInt(result[0].Attaque);
+        this.retour = result[0].Attaque;
       },
       error => {
         console.error(error);

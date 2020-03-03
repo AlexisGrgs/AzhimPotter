@@ -2,7 +2,7 @@
 <div class="container">
 <h2> Tu as {{totalPoint}} point{{sornot}} de compétence à répartir !</h2>
 
-
+<p>{{retour}}</p>
 <div class="qty mt-5">
   <h2> Intelligence </h2>
   <span class="minus bg-dark" (click)="onDecrement(0)">-</span>
@@ -36,9 +36,6 @@
 <div align='center'>
   <img [alt]="bookName" [src]="bookPictureUrl">
 </div>
-
-<p> Dommage tu es marocain ! </p>
-
 
 <button type="button" 
 (click)="getNbPoint()">BUY</button>
