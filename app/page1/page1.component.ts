@@ -13,7 +13,7 @@ export class Page1Component implements OnInit {
   totalPoint = 10;
   sornot=this.totalPoint>1?"s":"";
   competences = [0,0,0,0,0,0,0,0,0];
-  api="http://60d04506.ngrok.io/api/baguettes";
+  api="https://c9fa3f26.ngrok.io/api/dragees";
   api2="https://sports-cars-accountable-civet.cfapps.io/api/cars/search/A7%20SPORTBACK"
   retour=0;
 
@@ -22,8 +22,8 @@ export class Page1Component implements OnInit {
   getNbPoint() {
     return this.http.get(this.api).subscribe(
       result => {
-        this.totalPoint = parseInt(result[0].Attaque);
-        this.retour = result[0].Attaque;
+        this.totalPoint = parseInt(result[1].RatioID);
+        this.retour = result[1].Id;
       },
       error => {
         console.error(error);
